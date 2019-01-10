@@ -14,7 +14,7 @@ To get a quick feeling for how the data interact with the three categorical vari
 
 These plots show us that there is significant variation across all three variables. Looking at the first row we immediately see that streams 4 and 8 are orders of magnitude larger than the other streams, and that the browsers Olga and DT have very low traffic. Looking at the second row, we see that the Vectrice browser apparently just doesn't support P2P transfers at all, and that streams 3 and 4 use have very low P2P transfer rates. At this point, we can say that if we really wanted to increase usage rates, we should focus on streams 4 and 8, which have the two highest-usages and the worst and third-worst fractional P2P usages, and that we should implement. While the plots below don't really tell as anything we couldn't learn from the heatmaps, they do make these group-specific insights a little clearer:
 
-~[](figures/usage-bars.png)
+![](figures/usage-bars.png)
 
 
 However, we can do better than that. We may look for clustering in the data by plotting each category, one by one (here in gif form), in data usage-space. For these gifs, I have subsetted the data to only include users who are connecting to the company's back-end, since if we are looking for patterns in how the P2P services are being used, we should only look at those that actually ~are~ being used.
@@ -22,6 +22,7 @@ However, we can do better than that. We may look for clustering in the data by p
 ![](figures/data-distributions-by_stream_id.gif)
 ![](figures/data-distributions-by_isp.gif)
 ![](figures/data-distributions-by_browser.gif)
+
 
 The patterns that appear in the data (large blocks of users who are drawing from both P2P and the CDN, a small block who are exclusively pulling CDN data, and some other small groups scattered around) makes me think that these groupings are determined by some factor not captured in the given data set (i.e. geography, a temporal element, or something else). Since we would ideally like to see as many users in the upper left as possible, this indicates that discovering the source of these groups would be useful for improving service. To this end, if we were given more data by which these users might be grouped, we could use some clustering algorithms (or maybe even PCA, depending on what additional data we were given) to root out the cause of these groupings.
 
