@@ -17,7 +17,7 @@ These plots show us that there is significant variation across all three variabl
 ![](figures/usage-bars.png)
 
 
-However, we can do better than that. We may look for clustering in the data by plotting each category, one by one (here in gif form), in data usage-space. For these gifs, I have subsetted the data to only include users who are connecting to the company's back-end, since if we are looking for patterns in how the P2P services are being used, we should only look at those that actually ~are~ being used.
+However, we can do better than that. We may look for clustering in the data by plotting each category, one by one (here in gif form), in data usage-space. For these gifs, I have subsetted the data to only include users who are connecting to the company's back-end, since if we are looking for patterns in how the P2P services are being used, we should only look at those that actually _are_ being used.
 
 ![](figures/data-distributions-by_stream_id.gif)
 ![](figures/data-distributions-by_isp.gif)
@@ -44,7 +44,6 @@ I would make the following recommendations:
 * **Make my plots more elegant!** These are definitely still a little rough around the edges.
 
 * **Work more in data-usage space.** There is more information contained in the gifs than I got to fully pull out. I did some preliminary secondary breakdowns (i.e. coloring by another categorical variable), which led to random distributions in some cases and well-segmented groups in others(i.e. one browser was responsible for a given group or something), but didn't really hit on any actionable insights. But I think there's more to be had here.
-
 
 * **Implement some ML** (this would probably require more data, too). I played with some clustering stuff for this just for fun (KNN and its friends, spectral clustering and DBSCAN), but since we don't have any more detailed metrics (timestamps, location, etc), there wasn't much to do with it more than just identify that those clusters are present, which I could do with my eye.
 
